@@ -1,6 +1,6 @@
 # airbnb-css-style-guide
 
-Airbnb CSS 스타일 가이드 따라하기
+Airbnb CSS 스타일 가이드 따라하기 (https://github.com/airbnb/css)
 
 ## 용어
 
