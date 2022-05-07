@@ -14,3 +14,17 @@ Airbnb CSS 스타일 가이드 따라하기
   line-height: 1.2;
 }
 ```
+
+### Selectors
+
+rule declaration에서 "selector"란, 정의된 property들이 DOM tree의 어느 엘리먼트에 적용될지 정하는 문자열을 의미한다. Selector는 HTML, class, ID, 속성 등을 매칭할 수 있다.
+
+```css
+.my-element-class {
+  /* ... */
+}
+
+[aria-hidden] {
+  /* ... */
+}
+```
