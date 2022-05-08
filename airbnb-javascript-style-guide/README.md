@@ -42,3 +42,21 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   bar[0] = 9
   console.log(foo[0], bar[0]) // -> 9, 9
   ```
+
+## References
+
+<a name="references--1"></a><a name="2-1"></a>
+
+- [2.1](#references--1) `var` 사용을 피하고 웬만한 참조를 `const` 를 사용해서 하자. 관련 eslint rule: [`prefer-const`](https://eslint.org/docs/rules/prefer-const), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign)
+
+  > 이렇게 하면 참조가 바뀔일이 없어서, 버그가 생길 일도 없고 코드가 어려워질 일도 없으진다.
+
+  ```javascript
+  // bad
+  var a = 1
+  var b = 2
+
+  // good
+  const a = 1
+  const b = 2
+  ```

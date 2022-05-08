@@ -28,3 +28,15 @@ rule declaration에서 "selector"란, 정의된 property들이 DOM tree의 어�
   /* ... */
 }
 ```
+
+### Properties
+
+마지막으로, Properties란 Rule declaration 에서 선택된 엘리먼트에 스타일을 주는 것을 의미한다. Properties는 key-value 쌍으로 이루어져 있고, 하나의 rule declaration 에는 여러개의 property declaration 이 들어갈 수 있다.
+
+```css
+/* some selector */
+ {
+  background: #f1f1f1;
+  color: #333;
+}
+```
