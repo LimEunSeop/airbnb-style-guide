@@ -45,7 +45,7 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
 
 ## References
 
-<a name="references--1"></a><a name="2-1"></a>
+<a name="references--1"></a><a name="2.1"></a>
 
 - [2.1](#references--1) `var` 사용을 피하고 웬만한 참조를 `const` 를 사용해서 하자. 관련 eslint rule: [`prefer-const`](https://eslint.org/docs/rules/prefer-const), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign)
 
@@ -59,4 +59,24 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   // good
   const a = 1
   const b = 2
+  ```
+
+<a name="references--2"></a><a name="2.2"></a>
+
+- [2.2](#references--2) 참조를 재할당하고 싶으면, `var` 말고 `let` 을 사용하라. 관련 eslint rule: [no-var](https://eslint.org/docs/rules/no-var)
+
+  > 그 이유는 `var`는 함수 스코프이고 `let` 은 블락 스코프이기 때문이다.
+
+  ```javascript
+  // bad
+  var count = 1
+  if (true) {
+    count += 1
+  }
+
+  // good, use the let.
+  let count = 1
+  if (true) {
+    count += 1
+  }
   ```
