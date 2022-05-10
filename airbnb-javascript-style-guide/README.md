@@ -80,3 +80,21 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
     count += 1
   }
   ```
+
+<a name="references--3"></a><a name="2.3"></a>
+
+- [2.3](#references--3) `let` 과 `const` 는 블락스코프이고, `var` 는 함수 스코프임을 명심하자.
+
+  ```javascript
+  // const와 let은 정의된 블락 안에서만 존재한다.
+  {
+    let a = 1
+    const b = 1
+    var c = 1
+  }
+  console.log(a) // ReferenceError
+  console.log(b) // ReferenceError
+  console.log(c) // Prints 1
+  ```
+
+  `a`, `b` 는 블락 스코프라서 블락 바깥에서 참조하려고 하면 존재하지도 않는 변수를 참조할때 발생하는 ReferenceError가 나고, `c` 는 자신이 속하는 함수가 스코프이므로 블락 바깥에서도 정상적으로 참조가 가능하다.
