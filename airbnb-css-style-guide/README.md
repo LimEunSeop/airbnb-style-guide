@@ -40,3 +40,49 @@ rule declaration에서 "selector"란, 정의된 property들이 DOM tree의 어�
   color: #333;
 }
 ```
+
+## CSS
+
+### Formatting
+
+- 들여쓰기를 soft tabs로 하라. soft tabs 란, 공백이 2개짜리인 탭을 말한다.
+- 클래스 이름을 Camel case 로 하지말고 dash 를 사용해서 단어를 구분하자.
+  - BEM 방법론을 사용한다면 Underscore와 PascalCase도 괜찮다.
+- ID 선택자는 사용하지 말라.
+- rule declaration에서 2개 이상의 선택자를 사용할 때, 선택자를은 각각 한 줄을 차지하도록 하자.
+- rule declaration 에서 중괄호를 열 때 한칸 공백을 두자.
+- 속성을 작성할때 `:` 앞에는 공백이 없고 뒤에는 한칸이 있어야한다.
+- 중괄호를 닫을때는 새로운 줄에서ㅇ닫는다.
+- rule declaration들 사이는 한 줄 공백으로 구분하자.
+
+#### Bad
+
+```css
+.avatar {
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.no,
+.nope,
+.not_good {
+  // ...
+}
+#lol-no {
+  // ...
+}
+```
+
+#### Good
+
+```css
+.avatar {
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.one,
+.selector,
+.per-line {
+  // ...
+}
+```
