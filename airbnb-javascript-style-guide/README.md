@@ -98,3 +98,17 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   ```
 
   `a`, `b` 는 블락 스코프라서 블락 바깥에서 참조하려고 하면 존재하지도 않는 변수를 참조할때 발생하는 ReferenceError가 나고, `c` 는 자신이 속하는 함수가 스코프이므로 블락 바깥에서도 정상적으로 참조가 가능하다.
+
+## Objects
+
+<a name="objects--1"></a><a name="3.1"></a>
+
+- [3.1](#objects--1) object 를 생성할 때 리터럴 문법을 사용하라. 관련 eslint rule: [`no-new-object`](https://eslint.org/docs/rules/no-new-object)
+
+  ```javascript
+  // bad
+  const item = new Object()
+
+  // good
+  const item = {}
+  ```
