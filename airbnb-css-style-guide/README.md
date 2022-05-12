@@ -52,7 +52,7 @@ rule declaration에서 "selector"란, 정의된 property들이 DOM tree의 어�
 - rule declaration에서 2개 이상의 선택자를 사용할 때, 선택자를은 각각 한 줄을 차지하도록 하자.
 - rule declaration 에서 중괄호를 열 때 한칸 공백을 두자.
 - 속성을 작성할때 `:` 앞에는 공백이 없고 뒤에는 한칸이 있어야한다.
-- 중괄호를 닫을때는 새로운 줄에서ㅇ닫는다.
+- 중괄호를 닫을때는 새로운 줄에서 닫는다.
 - rule declaration들 사이는 한 줄 공백으로 구분하자.
 
 #### Bad
@@ -86,3 +86,11 @@ rule declaration에서 "selector"란, 정의된 property들이 DOM tree의 어�
   // ...
 }
 ```
+
+## Comments
+
+- Sass 를 사용해서 line comments (`//`) 를 자주 사용하도록 하자.
+- end-of-line comments 사용하지 말자(코드 뒤에 주석 다는것). 주석은 스스로 한 줄을 차지하도록 해야한다.
+- self-documenting이 안되는 코드는 자세한 주석을 사용해야 한다! self-documenting이란, 주석 없이 읽는것 그 자체로 의미를 파악할 수 있는 것을 의미한다.
+  - z-index 에 관한 설명
+  - 브라우저 특정 해킹 & 트릭을 적용했을 때

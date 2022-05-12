@@ -112,3 +112,29 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   // good
   const item = {}
   ```
+
+<a name="objects--2"></a><a name="3.2"></a>
+
+- [3.2](#objects--2) 객체 생성시 객체명을 동적으로 만들고 싶을 때 computed property를 사용하자.
+
+  > 속성을 한군데에 보기좋게 모두 정의하기 위함이다.
+
+  ```javascript
+  function getKey(k) {
+    return `a key names ${k}`
+  }
+
+  // bad
+  const obj = {
+    id: 5,
+    name: 'San Francisco',
+  }
+  obj[getKey('enabled')] = true
+
+  // good
+  const obj = {
+    id: 5,
+    name: 'San Francisco',
+    [getKey('enabled')]: true,
+  }
+  ```
