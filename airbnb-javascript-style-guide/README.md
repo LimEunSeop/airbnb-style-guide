@@ -138,3 +138,27 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
     [getKey('enabled')]: true,
   }
   ```
+
+<a name="objects--3"></a><a name="3.3"></a>
+
+- [3.3](#objects--3) 오브젝트 메서드 축약문법을 사용하자. 관련 eslint rule: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand)
+
+  ```javascript
+  // bad
+  const atom = {
+    value: 1,
+
+    addValue: function (value) {
+      return atom.value + value
+    },
+  }
+
+  // good
+  const atom = {
+    value: 1,
+
+    addValue(value) {
+      return atom.value + value
+    },
+  }
+  ```
