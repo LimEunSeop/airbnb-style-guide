@@ -162,3 +162,23 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
     },
   }
   ```
+
+<a name="objects--4"></a><a name="3.4"></a>
+
+- [3.4](#objects--4) 속성값도 축약문법을 사용하자. 관련 eslint rule: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand)
+
+  > 그 이유는? 더 짧고, 설명에 유리하기 때문
+
+  ```javascript
+  const lukeSkywalker = 'Luke Skywalker'
+
+  // bad
+  const obj = {
+    lukeSkywalker: lukeSkywalker,
+  }
+
+  // good
+  const obj = {
+    lukeSkywalker,
+  }
+  ```
