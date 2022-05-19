@@ -182,3 +182,34 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
     lukeSkywalker,
   }
   ```
+
+<a name="objects--5"></a><a name="3.5"></a>
+
+- [3.5](#objects--5) 속성값 축약문법을 사용할 때는 속성 선언부 윗쪽에 같이 배치해두자.
+
+  > 이유는, 축약문법을 사용한 속성이 무엇인지 한눈에 파악 가능하기 때문이다.
+
+  ```javascript
+  const anakinSkywalker = 'Anakin Skywalker'
+  const lukeSkywalker = 'Luke Skywalker'
+
+  // bad
+  const obj = {
+    episodeOne: 1,
+    twoJediWalkIntoACantina: 2,
+    lukeSkywalker,
+    episodeThree: 3,
+    mayTheFourth: 4,
+    anakinSkywalker,
+  }
+
+  // good
+  const obj = {
+    lukeSkywalker,
+    anakinSkywalker,
+    episodeOne: 1,
+    twoJediWaliIntoACantina: 2,
+    episodeThree: 3,
+    mayTheFourth: 4,
+  }
+  ```
