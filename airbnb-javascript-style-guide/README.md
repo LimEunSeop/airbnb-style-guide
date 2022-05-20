@@ -213,3 +213,25 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
     mayTheFourth: 4,
   }
   ```
+
+<a name="objects--6"></a><a name="3.6"></a>
+
+- [3.6](#objects--6) 부적절한 식별자한테만 따옴표 속성을 사용하자. 관련 eslint rule: [`quote-props`](https://eslint.org/docs/rules/quote-props)
+
+  > 그 이유는, 일반적으로 읽기 쉽기 때문이다. 또한, syntax highlighting 에 유리하고, JS 엔진이 최적화하기 더욱 유리해진다.
+
+  ```javascript
+  // bad
+  const bad = {
+    foo: 3,
+    bar: 4,
+    'data-blah': 5,
+  }
+
+  // good
+  const good = {
+    foo: 3,
+    bar: 4,
+    'data-blah': 5,
+  }
+  ```
