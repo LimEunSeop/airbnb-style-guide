@@ -235,3 +235,24 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
     'data-blah': 5,
   }
   ```
+
+<a name="objects--7"></a><a name="3.7"></a>
+
+- [3.7](#objects--7) `hasOwnProperty`, `propertyIsEnumerable`, `isPrototypeOf` 와 같은 `Object.prototype` 메소드는 호출하지 말자. 관련 eslint rule: [`no-prototype-buildins`](https://eslint.org/docs/rules/no-prototype-builtins)
+
+  > 이유는, 해당 메소드들이 다음과 같은 상황으로 가려질 수 있기 때문이다. - `{ hasOwnProperty: false }` 와 같이 새로운 속성으로 덮어지거나 - null object 로 생성될 수도 있다. `Object.create(null)`
+
+  ```javascript
+  // bad
+  console.log(object.hasOwnProperty(key))
+
+  // good
+  console.log(Object.prototype.hasOwnProperty.call(object, key))
+
+  // best
+  const has = Object.prototype.hasOwnProperty // 모듈 스코프에서 검색을 캐시한다.
+  console.log(has.call(object, key))
+  /* or */
+  import has from 'has' // https://www.npmjs.com/package/has
+  console.log(has(object, key))
+  ```
