@@ -256,3 +256,24 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   import has from 'has' // https://www.npmjs.com/package/has
   console.log(has(object, key))
   ```
+
+<a name="objects--8"></a><a name="3.8"></a>
+
+- [3.8](#objects--8) 얕은 복사를 할 때는 `Object.assign`보단 spread 문법을 사용하자. 특정 속성이 생략된 새로운 객체를 얻고 싶을 땐 rest parameter 문법을 사용하자. eslint: [`prefer-object-spread`](https://eslint.org/docs/rules/prefer-object-spread)
+
+  ```javascript
+  // very bad
+  const original = { a: 1, b: 2 }
+  const copy = Object.assign(original, { c: 3 }) // 'original'을 mutate해서 좋지않음
+  delete copy.a // 얘도 마찬가지ㅇ
+
+  // bad
+  const original = { a: 1, b: 2 }
+  const copy = Object.assign({}, original, { c: 3 }) // copy => { a: 1, b: 2, c: 3 }
+
+  // good
+  const original = { a: 1, b: 2 }
+  const copy = { ...original, c: 3 } // copy => { a: 1, b: 2, c: 3 }
+
+  const { a, ...noA } = copy // noA => { b: 2, c: 3 }
+  ```
