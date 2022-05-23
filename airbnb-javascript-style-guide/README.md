@@ -277,3 +277,31 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
 
   const { a, ...noA } = copy // noA => { b: 2, c: 3 }
   ```
+
+## Arrays
+
+<a name="arrays--1"></a><a name="4.1"></a>
+
+- [4.1](#arrays--1) array 만들때 리터럴 문법을 사용하자. eslint: [`no-array-constructor`](https://eslint.org/docs/rules/no-array-constructor)
+
+  ```javascript
+  // bad
+  const items = new Array()
+
+  // good
+  const items = []
+  ```
+
+<a name="arrays--2"></a><a name="4.2"></a>
+
+- [4.1](#arrays--2) array에 아이템 삽입시 직접 할당 하지 말고 Array#push 를 사용하자
+
+  ```javascript
+  const someStack = []
+
+  // bad
+  someStack[someStack.length] = 'abracadabra'
+
+  // good
+  someStack.push('abracadabra')
+  ```
