@@ -294,7 +294,7 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
 
 <a name="arrays--2"></a><a name="4.2"></a>
 
-- [4.1](#arrays--2) array에 아이템 삽입시 직접 할당 하지 말고 Array#push 를 사용하자
+- [4.2](#arrays--2) array에 아이템 삽입시 직접 할당 하지 말고 Array#push 를 사용하자
 
   ```javascript
   const someStack = []
@@ -305,3 +305,65 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   // good
   someStack.push('abracadabra')
   ```
+
+<a name="arrays--3"></a><a name="4.3"></a>
+
+- [4.3](#arrays--3) array 복사시에는 spread 문법을 필히 사용하자.
+
+  ```javascript
+  // bad
+  const len = items.length
+  const itemsCopy = []
+  let i
+
+  for (i = 0; i < len; i += 1) {
+    itemsCopy[i] = items[i]
+  }
+
+  // good
+  const itemsCopy = [...items]
+  ```
+
+<a name="arrays--4"></a><a name="4.4"></a>
+
+- [4.4](#arrays--4) **iterable object** 를 array 로 바꿀때는 `Array.from` 보단 spread 문법을 사용하자.
+
+  ```javascript
+  const foo = document.querySelectorAll('.foo')
+
+  // good
+  const nodes = Array.from(foo)
+
+  // best
+  const nodes = [...foo]
+  ```
+
+<a name="arrays--5"></a><a name="4.5"></a>
+
+- [4.5](#arrays--5) **array-like 오브젝트**를 array로 바꿀때는 `Array.from`을 사용하자. 그니까 정리하자면, object 인데 속성이 Array 처럼 생겼다! 그때는 `Array.from`, 그 이외의 모든 iterable은 spread 문법 사용하기!! spread 는 iterable 이면 가능하니까!!!!!
+
+  ```javascript
+  const arrLike = { 0: 'foo', 1: 'bar', 2: 'baz', length: 3 }
+
+  // bad
+  const arr = Array.prototype.slice.call(arrLike)
+
+  // good
+  const arr = Array.from(arrLike)
+  ```
+
+<a name="arrays--6"></a><a name="4.6"></a>
+
+- [4.6](#arrays--6) iterable을 map 하려면 spread 문법 쓰지말고 `Array.from`을 사용하자!!! spread 쓰면 배열이 새로 생성되니까 비효율적이다!
+
+  ```javascript
+  // bad
+  const baz = [...foo].map(bar)
+
+  // good
+  const baz = Array.from(foo, bar)
+  ```
+
+<a name="arrays--6"></a><a name="4.6"></a>
+
+- [4.6](#arrays--6)
