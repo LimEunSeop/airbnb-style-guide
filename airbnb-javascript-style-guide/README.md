@@ -363,3 +363,56 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   // good
   const baz = Array.from(foo, bar)
   ```
+
+<a name="arrays--7"></a><a name="4.7"></a>
+
+- [4.7](#arrays--7) 배열 메소드 콜백에서 return 문을 꼭 사용하도록 하자. body 가 한줄이고 사이드이펙트를 발생시키지 않는 코드라면 return 생략해도 된다. eslint: [`array-callback-return`](https://eslint.org/docs/rules/array-callback-return)
+
+  ```javascript
+  // good
+  ;[1, 2, 3].map((x) => {
+    const y = x + 1
+    return x * y
+  })
+
+  // good
+  ;[(1, 2, 3)].map((x) => x + 1)
+
+  // bad = no returned value means `acc` becomes undefined after the first iteration
+  ;[
+    [0, 1],
+    [2, 3],
+    [4, 5],
+  ].reduce((acc, item, index) => {
+    const flatten = acc.concat(item)
+  })
+
+  // good
+  ;[
+    [0, 1],
+    [2, 3],
+    [4, 5],
+  ].reduce((acc, item, index) => {
+    const flatten = acc.concat(item)
+    return flatten
+  })
+
+  // bad
+  inbox.filter((msg) => {
+    const { subject, author } = msg
+    if (subject === 'Mockingbird') {
+      return author === 'Harper Lee'
+    } else {
+      return false
+    }
+  })
+
+  inbox.filter((msg) => {
+    const { subject, author } = msg
+    if (subject === 'Mockingbird') {
+      return author === 'Harper Lee'
+    }
+
+    return false
+  })
+  ```
