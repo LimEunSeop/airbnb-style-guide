@@ -363,7 +363,3 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   // good
   const baz = Array.from(foo, bar)
   ```
-
-<a name="arrays--6"></a><a name="4.6"></a>
-
-- [4.6](#arrays--6)
