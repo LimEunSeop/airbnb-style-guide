@@ -8,7 +8,7 @@
   // Example:
   "genertate-item": {
     "prefix": "itg",
-    "body": ["<a name=\"$3--$2\"></a><a name=\"$1.$2\"></a>", "", "- [$1.$2](#$3--$2)"],
-    "description": "add an item"
+    "body": ["<a name=\"$3--$2\"></a><a name=\"$1.$2\"></a>", "", "- [$1.$2](#$3--$2) $4"],
+    "description": "add an item for javascript style"
   }
 }
