@@ -416,3 +416,32 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
     return false
   })
   ```
+
+## Destructuring
+
+<a name="destructuring--1"></a><a name="5.1"></a>
+
+- [5.1](#destructuring--1) 오브젝트의 다수 속성에 접근할 때는 object destructuring을 사용하자. eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
+
+  > 그 이유는, destructuring 이 불필요한 객체 참조를 줄여주고 object 에 대한 반복적인 엑세스를 줄여주기 때문이다. 반복적인 object 엑세스는 코드의 중복이 일어나고, 가독성에 좋지 않으며, 실수를 할 여지가 많이 생긴다. destructuring은 또한 코드블락에서 object의 어떤 속성을 사용할 건지 한 군데에서 명확하게 정해주는 역할을 한다. destructuring을 사용하지 않는다면, 코드블락 전체를 읽어가며 object에서 어느 속성을 사용하고 있는지 일일히 확인해야 하는 불편함이 따를것이다..
+
+  ```javascript
+  // bad
+  function getFullName(user) {
+    const firstName = user.fiestName
+    const lastName = user.lastName
+
+    return `${firstName} ${lastName}`
+  }
+
+  // good
+  function getFullName(user) {
+    const { firstName, lastName } = user
+    return `${firstName} ${lastName}`
+  }
+
+  // best
+  function getFullName({ firstName, lastName }) {
+    return `${firstName} ${lastName}`
+  }
+  ```
