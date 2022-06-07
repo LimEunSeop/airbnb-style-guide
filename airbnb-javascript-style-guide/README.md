@@ -445,3 +445,18 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
     return `${firstName} ${lastName}`
   }
   ```
+
+<a name="destructuring--2"></a><a name="5.2"></a>
+
+- [5.2](#destructuring--2) 배열도 destructuring 하자. eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
+
+  ```javascript
+  const arr = [1, 2, 3, 4]
+
+  // bad
+  const first = arr[0]
+  const second = arr[1]
+
+  // good
+  const [first, second] = arr
+  ```
