@@ -460,3 +460,29 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   // good
   const [first, second] = arr
   ```
+
+<a name="destructuring--3"></a><a name="5.3"></a>
+
+- [5.3](#destructuring--3) 여러 값을 리턴할때는 array destructuring 말고 object destructuring을 하자.
+
+  > 호출하는 곳의 변경 없이 새로운 속성을 추가하거나 순서를 변경할 수 있기 때문.
+
+  ```javascript
+  // bad
+  function processInput(input) {
+    // then a miracle occurs
+    return [left, right, top, bottom]
+  }
+
+  // the caller needs to think about the order of return data
+  const [left, __, top] = processInput(input)
+
+  // good
+  function processInput(input) {
+    // then a miracle occurs
+    return { left, right, top, bottom }
+  }
+
+  // the caller selects only the data they need
+  const { left, top } = processInput(input)
+  ```
