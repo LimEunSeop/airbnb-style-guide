@@ -486,3 +486,21 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   // the caller selects only the data they need
   const { left, top } = processInput(input)
   ```
+
+## Strings
+
+<a name="strings--1"></a><a name="6.1"></a>
+
+- [6.1](#strings--1) 문자열을 single quote(`''`)로 표기하자. eslint: [`quotes`](https://eslint.org/docs/rules/quotes)
+
+  ```javascript
+  //bad
+  // prettier-ignore
+  const name = "Catp.Janeway"
+
+  // bad - template literals should contain interploation or newlines
+  const name = `Capt. Janeway`
+
+  // good
+  const name = 'Capt. Janeway'
+  ```
