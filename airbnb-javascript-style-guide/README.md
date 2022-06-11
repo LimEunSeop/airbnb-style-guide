@@ -504,3 +504,28 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   // good
   const name = 'Capt. Janeway'
   ```
+
+<a name="strings--2"></a><a name="6.2"></a>
+
+- [6.2](#strings--2) 100자 이상의 문자열은 문자열 접합으로 여러줄로 나누면 안된다.
+
+  > 줄이 깨진 문자열은 작업을 어렵게 하고 잘 검색이 안된다.
+
+  ```javascript
+  // bad
+  const errorMessage =
+    'This is a super long error that was thrown because \
+  of Batman. When you stop to think about how Batman had anything to do \
+  with this, you would get nowhere \
+  fast.'
+
+  // bad
+  const errorMessage =
+    'This is a super long error that was thrown because ' +
+    'of Batman. When you stop to think about how Batman had anything to do ' +
+    'with this, you would get nowhere fast.'
+
+  // good
+  const errorMessage =
+    'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.'
+  ```
