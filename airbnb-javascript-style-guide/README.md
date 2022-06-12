@@ -529,3 +529,32 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   const errorMessage =
     'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.'
   ```
+
+<a name="strings--3"></a><a name="6.3"></a>
+
+- [6.3](#strings--3) 프로그래밍적으로 문자열 빌드할때는 concatenation 보다는 template strings를 사용하자. eslint: [`prefer-template`](https://eslint.org/docs/rules/prefer-template) [`template-curly-spacing`](https://eslint.org/docs/rules/template-curly-spacing)
+
+  > 더 읽기 쉽고, 적절한 줄바꿈과 interploation이 가능한 명료한 문법을 제공한다.
+
+  ```javascript
+  // bad
+  function sayHi(name) {
+    return 'How are you, ' + name + '?'
+  }
+
+  // bad
+  function sayHi(name) {
+    return ['How are you, ', name, '?'].join()
+  }
+
+  // bad
+  // prettier-ignore
+  function sayHi(name) {
+    return `How are you, ${ name }?`
+  }
+
+  // good
+  function sayHi(name) {
+    return `How are you, ${name}?`
+  }
+  ```
