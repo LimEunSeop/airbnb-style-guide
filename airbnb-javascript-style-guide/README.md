@@ -558,3 +558,7 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
     return `How are you, ${name}?`
   }
   ```
+
+<a name="strings--4"></a><a name="6.4"></a>
+
+- [6.4](#strings--4) 문자열에 `eval()` 을 절대 쓰지 말자. 취약점이 매우 많다. eslint: [`no-eval`](https://eslint.org/docs/rules/no-eval)
