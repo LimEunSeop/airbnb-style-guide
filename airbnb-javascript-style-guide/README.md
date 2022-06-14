@@ -562,3 +562,19 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
 <a name="strings--4"></a><a name="6.4"></a>
 
 - [6.4](#strings--4) 문자열에 `eval()` 을 절대 쓰지 말자. 취약점이 매우 많다. eslint: [`no-eval`](https://eslint.org/docs/rules/no-eval)
+
+<a name="strings--5"></a><a name="6.5"></a>
+
+- [6.5](#strings--5) escape 문자를 남발하지 말자. eslint: [`no-useless-escape`](https://eslint.org/docs/rules/no-useless-escape)
+
+  > 백슬래쉬는 정말 필요한 곳에만 써야지, 그렇지 않으면 읽기 불편할 뿐이다.
+
+  ```javascript
+  // bad
+  // prettier-ignore
+  const foo = '\'this\' \i\s \"quoted\"';
+
+  // good
+  const foo = '\'this\' is "quoted"'
+  const foo = `my name is '${name}'`
+  ```
