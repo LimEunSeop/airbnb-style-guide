@@ -578,3 +578,29 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
   const foo = '\'this\' is "quoted"'
   const foo = `my name is '${name}'`
   ```
+
+## Functions
+
+<a name="functions--1"></a><a name="7.1"></a>
+
+- [7.1](#functions--1) 함수 선언문을 말고 함수 표현식을 사용할 것. eslint: [`func-style`](https://eslint.org/docs/rules/func-style)
+
+  > 함수 선언문은 호이스팅돼서 가독성이 떨어지고 유지보수성이 나빠진다. 만약에 함수 정의가 너무 길면, 그때는 모듈로 따로 빼야한다. 함수표현식에도 이름을 주도록 하자. Error 콜백에 대한 assumption을 제거해준다.
+
+  ```javascript
+  // bad
+  function foo() {
+    // ...
+  }
+
+  // bad
+  const foo = function () {
+    // ...
+  }
+
+  // good
+  // lexical name distinguished from the variable-referenced invocation(s)
+  const short = function longUniqueMoreDescriptiveLexicalFoo() {
+    // ...
+  }
+  ```
