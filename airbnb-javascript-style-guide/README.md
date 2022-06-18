@@ -604,3 +604,18 @@ Airbnb 자바스크립트 스타일 가이드 따라하기 (https://github.com/a
     // ...
   }
   ```
+
+<a name="functions--2"></a><a name="7.2"></a>
+
+- [7.2](#functions--2) IIFE 패턴을 사용하려면 함수표현식으로 만들기 위하여 괄호로 꼭 묶어라. eslint: [`wrap-iife`](https://eslint.org/docs/rules/wrap-iife)
+
+  > 함수 선언문은 IIFE 가 안된다. 괄호로 묶어야 표현식으로 바뀌면서 IIFE가 가능해지게 된다. IIFE 패턴을 쓰기 좋은 때는?? 코드 모듈에서 공개하고 싶은것만 공개하고 전역을 오염시키고 싶지 않을때 쓰면 좋을것 같다.
+
+  ```javascript
+  // prettier-ignore
+  // immediately-invoked function expression (IIFE)
+  // outside, inside 옵션이 있다. 현재는 outside 방식에 의한 묶음이고, 디폴트가 outside이다.
+  (function () {
+    console.log('Welcome to the Internet. Please follow me.')
+  }())
+  ```
